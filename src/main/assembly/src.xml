@@ -7,6 +7,11 @@
   </formats>
   <fileSets>
     <fileSet>
+      <includes>
+        <include>${project.basedir}/README*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
       <directory>${project.build.directory}</directory>
       <outputDirectory>lib</outputDirectory>
       <includes>
