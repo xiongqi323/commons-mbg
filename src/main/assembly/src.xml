@@ -12,7 +12,25 @@
       </includes>
     </fileSet>
     <fileSet>
+      <directory>src/main/resources</directory>
+      <outputDirectory>conf</outputDirectory>
+      <includes>
+        <include>generatorConfig.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/scripts</directory>
+      <outputDirectory>/bin</outputDirectory>
+    </fileSet>
+    <fileSet>
       <directory>${project.build.directory}</directory>
+      <outputDirectory>lib</outputDirectory>
+      <includes>
+        <include>*.jar</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>${project.basedir}/lib</directory>
       <outputDirectory>lib</outputDirectory>
       <includes>
         <include>*.jar</include>
