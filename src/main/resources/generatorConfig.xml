@@ -6,6 +6,8 @@
     <!-- 数据库驱动包路径 -->
     <classPathEntry location="mysql-connector-java-5.1.46.jar" />
     <context id="mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+
         <!-- 生成的javabean，将implements Serializable接口 -->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
         <commentGenerator>
