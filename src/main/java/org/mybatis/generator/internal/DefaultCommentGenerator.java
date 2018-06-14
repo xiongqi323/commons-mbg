@@ -252,7 +252,7 @@ public class DefaultCommentGenerator implements CommentGenerator {
         }
 
         StringBuilder sb = new StringBuilder();
-        sb.append(" * database column "); //$NON-NLS-1$
+        sb.append(" * "); //$NON-NLS-1$
         sb.append(introspectedTable.getFullyQualifiedTable());
         sb.append('.');
         sb.append(introspectedColumn.getActualColumnName());
@@ -276,45 +276,14 @@ public class DefaultCommentGenerator implements CommentGenerator {
     public void addGetterComment(Method method,
             IntrospectedTable introspectedTable,
             IntrospectedColumn introspectedColumn) {
-        if (suppressAllComments) {
-            return;
-        }
 
-        StringBuilder sb = new StringBuilder();
-
-        method.addJavaDocLine("/**"); //$NON-NLS-1$
-
-        sb.append(" * @return the value of "); //$NON-NLS-1$
-        sb.append(introspectedTable.getFullyQualifiedTable());
-        sb.append('.');
-        sb.append(introspectedColumn.getActualColumnName());
-        method.addJavaDocLine(sb.toString());
-
-        method.addJavaDocLine(" */"); //$NON-NLS-1$
     }
 
     @Override
     public void addSetterComment(Method method,
             IntrospectedTable introspectedTable,
             IntrospectedColumn introspectedColumn) {
-        if (suppressAllComments) {
-            return;
-        }
 
-        method.addJavaDocLine("/**"); //$NON-NLS-1$
-
-        Parameter parm = method.getParameters().get(0);
-
-        StringBuilder sb = new StringBuilder();
-        sb.append(" * @param "); //$NON-NLS-1$
-        sb.append(parm.getName());
-        sb.append(" the value for "); //$NON-NLS-1$
-        sb.append(introspectedTable.getFullyQualifiedTable());
-        sb.append('.');
-        sb.append(introspectedColumn.getActualColumnName());
-        method.addJavaDocLine(sb.toString());
-
-        method.addJavaDocLine(" */"); //$NON-NLS-1$
     }
 
     @Override
